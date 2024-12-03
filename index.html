@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayStation $50 Gift Card</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2c3e50;
+            color: white;
+            overflow-x: hidden;
+        }
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('your-background-image.jpg'); /* Add your background image URL */
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+        .content {
+            text-align: center;
+            z-index: 10;
+            position: relative;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        .image-box {
+            width: 350px;
+            margin: 30px 0;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        .image-box img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 15px;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
+        }
+        .claim-button {
+            background-color: #f39c12;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+        }
+        .claim-button:hover {
+            background-color: #e67e22;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        .three-lines-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: transparent;
+            border: none;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            z-index: 20;
+        }
+        .offer-details {
+            margin-top: 20px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .popup {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: #16a085;
+            color: white;
+            padding: 15px;
+            border-radius: 50px;
+            font-size: 16px;
+            display: none;
+        }
+        .popup.show {
+            display: block;
+        }
+        .countdown {
+            margin-top: 30px;
+            font-size: 22px;
+        }
+        .social-proof {
+            margin-top: 20px;
+            font-size: 16px;
+        }
+        .social-proof span {
+            font-weight: bold;
+            color: #f39c12;
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        .bounce {
+            animation: bounce 1s infinite;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        .pulse {
+            animation: pulse 1.5s infinite;
+        }
+        @media (max-width: 768px) {
+            .container {
+                height: auto;
+                padding: 50px 20px;
+            }
+            .content {
+                width: 100%;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="content">
+            <button class="three-lines-btn">☰</button>
+            <div class="image-box">
+                <img src="https://i.ibb.co/KNJscgx/ce8c76ea8568.jpg" alt="PlayStation Gift Card">
+            </div>
+            <button class="claim-button bounce" onclick="window.location.href='https://optilinklock.com/1759553'">Claim Now</button>
+            <div class="offer-details pulse">
+                <p>Get a PlayStation $50 Gift Card today! Limited time offer, don’t miss out on this amazing deal!</p>
+            </div>
+            <div class="countdown">
+                <p>Offer ends in: <span id="countdown"></span></p>
+            </div>
+            <div class="social-proof">
+                <p>Over <span>4,578</span> people have already claimed this offer!</p>
+            </div>
+        </div>
+        <div class="popup" id="popup">4578 people have already claimed this gift card!</div>
+    </div>
+
+    <script>
+        // Countdown Timer
+        function startCountdown() {
+            var endTime = new Date().getTime() + 1000 * 60 * 60 * 24; // 24 hours countdown
+            var timer = setInterval(function() {
+                var currentTime = new Date().getTime();
+                var distance = endTime - currentTime;
+
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById("countdown").innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
+
+                if (distance < 0) {
+                    clearInterval(timer);
+                    document.getElementById("countdown").innerHTML = "EXPIRED";
+                }
+            }, 1000);
+        }
+
+        startCountdown();
+
+        // Popup notification
+        window.onload = function() {
+            setTimeout(function() {
+                document.getElementById("popup").classList.add("show");
+            }, 3000); // Show popup after 3 seconds
+        };
+    </script>
+
+</body>
+</html>
